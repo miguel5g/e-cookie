@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background: #F5F5F5;
+}
+
+.button {
+  padding: 4px;
+
+  background: none;
+  border-radius: 4px;
+  border: solid 1px #EB4034;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #EB4034;
+    box-shadow: 0 2px 13px 4px rgba($color: #000000, $alpha: 0.25);
+    
+    color: #FFF;
+  }
+}
+
+body > main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+
+  background: 
+    url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><foreignObject width=%22100px%22 height=%22100px%22><div xmlns=%22http://www.w3.org/1999/xhtml%22 style=%22font-size:70px; opacity: 0.05%22>🍪</div></foreignObject></svg>"), 
+    #F5F5F5; 
+  background-size: 60px 60px; 
+
+  & > h1 {
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  & > p {
+    font-size: 16px;
+  }
+
+  & > button {
+    margin-top: 13px;
+  }
+}
+
+div.result {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba($color: #000000, $alpha: 0.75);
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 13px;
+    margin: 13px;
+    
+    background: #FFF;
+    border-radius: 7px;
+    box-shadow: 0 5px 13px 4px rgba($color: #000000, $alpha: 0.25);
+
+    & > h4 {
+      margin-bottom: 13px;
+
+      color: #000000;
+      font-family: 'Poppins';
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    & > span {
+      font-size: 14px;
+      margin-bottom: 13px;
+    }
+  }
+
+  &.closed {
+    display: none;
+  }
+
+  &.win {
+    & > div:last-child {
+      display: none;
+    }
+  }
+
+  &.lose {
+    & > div:first-child {
+      display: none;
+    }
+  }
+}
